@@ -1,4 +1,4 @@
-﻿namespace PMI.MHospital.Shared.Extensions
+﻿namespace PMI.Hospital.Shared.Extensions
 {
     /// <summary>
     /// Provides methods to calculate pages.

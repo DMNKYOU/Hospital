@@ -1,4 +1,4 @@
-﻿namespace PMI.MHospital.Shared.Common;
+﻿namespace PMI.Hospital.Shared.Common;
 
 /// <summary>
 /// Result from page query.

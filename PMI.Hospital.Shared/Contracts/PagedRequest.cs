@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PMI.MHospital.Shared.Contracts;
+namespace PMI.Hospital.Shared.Contracts;
 
 /// <summary>
 /// The paged request.

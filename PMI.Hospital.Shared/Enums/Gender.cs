@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace PMI.MHospital.Shared.Enums
+namespace PMI.Hospital.Shared.Enums
 
 {
     /// <summary>
