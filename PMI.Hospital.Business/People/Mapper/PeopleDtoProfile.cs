@@ -4,7 +4,7 @@ using PMI.Hospital.Core.Models.People;
 namespace PMI.Hospital.Infrastructure.Mapper
 {
     /// <summary>
-    /// An AutoMapper profile for peron models.
+    /// An AutoMapper profile for person models.
     /// </summary>
     public sealed class PeopleDtoProfile : Profile
     {

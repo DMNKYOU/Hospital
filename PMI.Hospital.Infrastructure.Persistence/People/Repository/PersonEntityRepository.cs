@@ -11,7 +11,6 @@ namespace PMI.Hospital.Infrastructure.Persistence.People.Repository
         /// Initializes a new instance of the <see cref="PersonEntityRepository"/> class.
         /// </summary>
         /// <param name="fetcher">The fetcher.</param>
-        /// <param name="updater">The updater.</param>
         /// <param name="creator">The creator.</param>
         /// <param name="remover">The remover.</param>
         public PersonEntityRepository(
@@ -20,17 +19,13 @@ namespace PMI.Hospital.Infrastructure.Persistence.People.Repository
             IPersonCreator creator,
             IPersonRemover remover)
         {
-            //Fetcher = fetcher;
-            //Updater = updater;
-            //Setter = setter;
+            Fetcher = fetcher;
+            Creator = creator;
             Remover = remover;
         }
 
         /// <inheritdoc />
         public IPersonFetcher Fetcher { get; }
-
-        ///// <inheritdoc />
-        //public IPersonUpdater Updater { get; }
 
         /// <inheritdoc />
         public IPersonCreator Creator { get; }

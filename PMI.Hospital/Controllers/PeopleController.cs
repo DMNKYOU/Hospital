@@ -15,6 +15,7 @@ namespace PMI.Hospital.Controllers
     {
         private readonly IMapper mapper;
         private readonly IPersonService personService;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="PeopleController"/> class.
         /// </summary>
@@ -36,9 +37,9 @@ namespace PMI.Hospital.Controllers
         [ProducesResponseType(typeof(PersonResponse), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<PersonResponse> Get([FromRoute] string personId)
+        public async Task<PersonResponse> Get([FromRoute] string id)
         {
-            var result = await personService.Get(personId);
+            var result = await personService.Get(id);
 
             return this.mapper.Map<PersonResponse>(result);
         }
@@ -68,9 +69,9 @@ namespace PMI.Hospital.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task Remove([FromRoute] string personId)
+        public async Task Remove([FromRoute] string id)
         {
-            await personService.Remove(personId); 
+            await personService.Remove(id); 
         }
     }
 }
