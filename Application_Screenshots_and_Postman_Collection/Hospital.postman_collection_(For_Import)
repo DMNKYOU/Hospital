@@ -1,0 +1,979 @@
+{
+	"info": {
+		"_postman_id": "0c3f3a4a-92c6-4c4f-a73f-6519f1179421",
+		"name": "Hospital",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40125771"
+	},
+	"item": [
+		{
+			"name": "1. Create Person",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\":\"152a836a-14f2-48b9-bccc-e1e0d3bd0cbc\",\n  \"family\": \"Zalesin\",\n  \"firstName\": \"Dmitriy\",\n  \"middleName\": \"Eduardovich\",\n  \"use\": \"official\",\n  \"gender\": 0,\n  \"birthDate\": \"1998-11-06T21:56\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:64874/api/v1/people",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"people"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://localhost:56169/api/v1/people' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'accept-language: ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7' \\\r\n  -H 'content-type: application/json-patch+json' \\\r\n  -H 'origin: https://localhost:56169' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://localhost:56169/swagger/index.html' \\\r\n  -H 'sec-ch-ua: \"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0' \\\r\n  --data-raw $'{\\n\" id\":\"152a836a-14f2-48b9-bccc-e1e0d3bd0cbc\",\\n  \"family\": \"Zalesin\",\\n  \"firstName\": \"Dmitriy\",\\n  \"middleName\": \"Eduardovich\",\\n  \"use\": \"official\",\\n  \"gender\": 0,\\n  \"birthDate\": \"1998-11-06T21:56\"\\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "2. Insert it as a Patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"personId\":\"152a836a-14f2-48b9-bccc-e1e0d3bd0cbc\",\n  \"active\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Update Patient state to inactive",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\":\"152a836a-14f2-48b9-bccc-e1e0d3bd0cbc\",\n  \"active\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get Patient data by ID ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients/152a836a-14f2-48b9-bccc-e1e0d3bd0cbc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients",
+						"152a836a-14f2-48b9-bccc-e1e0d3bd0cbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Delete Patient by ID ",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients/152a836a-14f2-48b9-bccc-e1e0d3bd0cbc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients",
+						"152a836a-14f2-48b9-bccc-e1e0d3bd0cbc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Recreate Person",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\":\"152a836a-14f2-48b9-bccc-e1e0d3bd0cb9\",\n  \"family\": \"Zalesin\",\n  \"firstName\": \"Dmitriy\",\n  \"middleName\": \"Eduardovich\",\n  \"use\": \"official\",\n  \"gender\": 0,\n  \"birthDate\": \"1998-11-06T21:56\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:64874/api/v1/people",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"people"
+					]
+				},
+				"description": "Generated from cURL: curl 'https://localhost:56169/api/v1/people' \\\r\n  -H 'accept: application/json' \\\r\n  -H 'accept-language: ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7' \\\r\n  -H 'content-type: application/json-patch+json' \\\r\n  -H 'origin: https://localhost:56169' \\\r\n  -H 'priority: u=1, i' \\\r\n  -H 'referer: https://localhost:56169/swagger/index.html' \\\r\n  -H 'sec-ch-ua: \"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"' \\\r\n  -H 'sec-ch-ua-mobile: ?0' \\\r\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\r\n  -H 'sec-fetch-dest: empty' \\\r\n  -H 'sec-fetch-mode: cors' \\\r\n  -H 'sec-fetch-site: same-origin' \\\r\n  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0' \\\r\n  --data-raw $'{\\n\" id\":\"152a836a-14f2-48b9-bccc-e1e0d3bd0cbc\",\\n  \"family\": \"Zalesin\",\\n  \"firstName\": \"Dmitriy\",\\n  \"middleName\": \"Eduardovich\",\\n  \"use\": \"official\",\\n  \"gender\": 0,\\n  \"birthDate\": \"1998-11-06T21:56\"\\n}'"
+			},
+			"response": []
+		},
+		{
+			"name": "7. Insert it as a Patient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"personId\":\"152a836a-14f2-48b9-bccc-e1e0d3bd0cb9\",\n  \"active\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8. search by date date time + ends before",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"searchTerm\": \"eb1998-11-06T21:56\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients/searchByDate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients",
+						"searchByDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9. Delete Person + Patient auto delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:64874/api/v1/people/152a836a-14f2-48b9-bccc-e1e0d3bd0cb9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"people",
+						"152a836a-14f2-48b9-bccc-e1e0d3bd0cb9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10. Check that all data removed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients/152a836a-14f2-48b9-bccc-e1e0d3bd0cb9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients",
+						"152a836a-14f2-48b9-bccc-e1e0d3bd0cb9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11. search by date year + equals",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"searchTerm\": \"eq2010\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients/searchByDate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients",
+						"searchByDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12. search by date greater or equal",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "accept-language",
+						"value": "ru,en;q=0.9,en-GB;q=0.8,en-US;q=0.7"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json-patch+json"
+					},
+					{
+						"key": "origin",
+						"value": "https://localhost:56169"
+					},
+					{
+						"key": "priority",
+						"value": "u=1, i"
+					},
+					{
+						"key": "referer",
+						"value": "https://localhost:56169/swagger/index.html"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-origin"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"searchTerm\": \"ge2024-12-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:64874/api/v1/patients/searchByDate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "64874",
+					"path": [
+						"api",
+						"v1",
+						"patients",
+						"searchByDate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
