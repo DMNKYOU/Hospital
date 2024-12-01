@@ -23,4 +23,4 @@ jobs:
     - name: Restore dependencies
       run:  dotnet restore "./PMI.Hospital/PMI.Hospital.csproj"
     - name: Build
-      run:  dotnet build "./PMI.Hospital.csproj"
+      run:  dotnet build "./PMI.Hospital/PMI.Hospital.csproj"
