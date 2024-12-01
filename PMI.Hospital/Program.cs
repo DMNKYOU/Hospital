@@ -1,26 +1,44 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using PMI.Hospital.Infrastructure;
+using PMI.Hospital.Infrastructure.Mapper;
 using PMI.Hospital.Infrastructure.Persistence.DatabaseContext;
+using PMI.Hospital.Infrastructure.Persistence.People.Mapper;
+using PMI.Hospital.Middleware;
+using PMI.Service.PersonalizationHub.Infrastructure.DependencyInjections;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //values
-const string MsSqlConnection = "MsSql";
-
+const string DatabaseMigrationError = "An error occurred while migrating the database";
 
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString(MsSqlConnection)));
+builder.Services.AddPersistenceStorage(builder.Configuration);
 
-builder.Services.AddControllers();
+var mappingConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new PeopleModelProfile());
+    mc.AddProfile(new PeopleDtoProfile());
+    mc.AddProfile(new PeopleProfile());
+});
+
+IMapper mapper = mappingConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+
+builder.Services.AddControllers().AddNewtonsoftJson();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "Maternity Hospital", Version = "v1" }));
+builder.Services.AddBusinessLayerDependencies();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
+    
     try
     {
         var context = services.GetRequiredService<ApplicationDbContext>();
@@ -29,7 +47,7 @@ using (var scope = app.Services.CreateScope())
     catch (Exception ex)
     {
         var logger = services.GetRequiredService<ILogger<Program>>();
-        logger.LogError(ex, "An error occurred while migrating the database.");
+        logger.LogError(ex, DatabaseMigrationError);
     }
 }
     // Configure the HTTP request pipeline.
@@ -45,6 +63,8 @@ using (var scope = app.Services.CreateScope())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseRouting();
 
 app.MapControllers();
 

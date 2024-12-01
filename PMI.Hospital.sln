@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMI.Hospital.Infrastructure
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{82B3315C-318F-4E7C-8164-0D5AF2A667A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMI.Hospital.Business", "PMI.Hospital.Business\PMI.Hospital.Business.csproj", "{580914BB-DC7F-49EF-A516-DD5A27615817}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMI.Hospital.Core", "PMI.Hospital.Core\PMI.Hospital.Core.csproj", "{30EB8082-D88D-46E7-962D-26E7A79745DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{82B3315C-318F-4E7C-8164-0D5AF2A667A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82B3315C-318F-4E7C-8164-0D5AF2A667A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82B3315C-318F-4E7C-8164-0D5AF2A667A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{580914BB-DC7F-49EF-A516-DD5A27615817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580914BB-DC7F-49EF-A516-DD5A27615817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580914BB-DC7F-49EF-A516-DD5A27615817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580914BB-DC7F-49EF-A516-DD5A27615817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30EB8082-D88D-46E7-962D-26E7A79745DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30EB8082-D88D-46E7-962D-26E7A79745DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30EB8082-D88D-46E7-962D-26E7A79745DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30EB8082-D88D-46E7-962D-26E7A79745DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

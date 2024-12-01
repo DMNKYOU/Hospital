@@ -1,4 +1,4 @@
-﻿using PMI.Hospital.Shared.Enums;
+﻿using PMI.Hospital.Core.Enums;
 using System;
 
 
@@ -39,7 +39,7 @@ namespace PMI.Hospital.Infrastructure.Persistence.Models
         /// <summary>
         /// Gets or sets gender status.
         /// </summary>
-        public Gender? Gender { get; set; } = Shared.Enums.Gender.Unknown;
+        public Gender? Gender { get; set; } = Core.Enums.Gender.Unknown;
 
         /// <summary>
         /// Gets or sets simulation date.

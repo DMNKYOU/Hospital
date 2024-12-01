@@ -1,4 +1,4 @@
-﻿using PMI.Hospital.Shared.Enums;
+﻿using PMI.Hospital.Core.Enums;
 using System;
 using System.Collections.Generic;
 

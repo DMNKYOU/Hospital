@@ -9,6 +9,7 @@ using PMI.Hospital.Infrastructure.Persistence.DatabaseContext;
 using PMI.Hospital.Shared.Common;
 using PMI.Hospital.Shared.Contracts;
 using PMI.Hospital.Shared.Extensions;
+
 namespace PMI.Hospital.Infrastructure.Persistence.Repository
 {
     /// <summary>
@@ -20,7 +21,7 @@ namespace PMI.Hospital.Infrastructure.Persistence.Repository
         where TEntity : class
         where TDto : class
     {
-        private readonly IMapper mapper;
+        protected readonly IMapper mapper;
         protected const int DefaultPageNumber = 1;
         protected const int DefaultPageSize = 1;
 

@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PMI.Hospital.Business\PMI.Hospital.Business.csproj" />
     <ProjectReference Include="..\PMI.Hospital.Infrastructure.Persistence\PMI.Hospital.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
