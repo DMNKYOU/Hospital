@@ -14,7 +14,7 @@ namespace PMI.Hospital.Business.People.Services
     {
         private readonly IMapper mapper;
         private ILogger<PersonService> logger;
-        private IPersonEntityRepository personEntityRepository;
+        private IPersonRepository personEntityRepository;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PersonService"/> class.
@@ -25,7 +25,7 @@ namespace PMI.Hospital.Business.People.Services
         public PersonService(
             IMapper mapper,
             ILogger<PersonService> logger,
-            IPersonEntityRepository personEntityRepository)
+            IPersonRepository personEntityRepository)
         {
             this.mapper = mapper;
             this.logger = logger;

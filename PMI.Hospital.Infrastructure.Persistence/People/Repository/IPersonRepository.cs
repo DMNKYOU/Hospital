@@ -7,7 +7,7 @@ namespace PMI.Hospital.Infrastructure.Persistence.People.Repository
     /// <summary>
     /// The person entity repository.
     /// </summary>
-    public interface IPersonEntityRepository
+    public interface IPersonRepository
     {
         /// <summary>
         /// The person entity fetcher.

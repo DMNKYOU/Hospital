@@ -25,9 +25,5 @@
     <ProjectReference Include="..\PMI.Hospital.Core\PMI.Hospital.Core.csproj" />
     <ProjectReference Include="..\PMI.Hospital.Shared\PMI.Hospital.Shared.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Patients Children Ward\Repository\" />
-  </ItemGroup>
   
 </Project>

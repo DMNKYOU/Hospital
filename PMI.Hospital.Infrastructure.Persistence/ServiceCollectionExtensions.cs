@@ -23,7 +23,7 @@ namespace PMI.Hospital.Infrastructure.Persistence
                 .AddScoped<IPersonFetcher, PersonFetcher>()
                 .AddScoped<IPersonCreator, PersonCreator>()
                 .AddScoped<IPersonRemover, PersonRemover>()
-                .AddScoped<IPersonEntityRepository, PersonEntityRepository>();
+                .AddScoped<IPersonRepository, PersonRepository>();
         }
     }
 }
