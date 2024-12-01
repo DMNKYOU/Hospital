@@ -92,9 +92,9 @@ namespace PMI.Hospital.Business.ChildrenWardPatients.Services
         }
 
         /// <inheritdoc />
-        public async Task Remove(string id)
+        public Task Remove(string id)
         {
-            await childrenWardPatientRepository.Remover.RemoveAsync(id);
+            return childrenWardPatientRepository.Remover.RemoveAsync(id);
         }
 
         public async Task<List<ChildrenWardPatientDto>> ListEntitiesByDate(string searchTerm)

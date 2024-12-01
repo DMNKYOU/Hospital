@@ -11,5 +11,10 @@ namespace PMI.Hospital.Shared.Constants
         /// The one item value constant.
         /// </summary>
         public const int OneItem  = 1;
+
+        /// <summary>
+        /// The error message.
+        /// </summary>
+        public const string ExistsError = "The entity already exists";
     }
 }

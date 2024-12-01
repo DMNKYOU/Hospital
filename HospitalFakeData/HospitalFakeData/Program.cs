@@ -4,7 +4,7 @@ using PMI.Hospital.Contracts.People;
 using PMI.Hospital.Core.Enums;
 using PMI.Hospital.MockHospitalData;
 
-const string host = "https://localhost:52703"; //should be updated before start
+const string host = "https://localhost:64874"; //should be updated before start
 var httpClient = new HttpClient { BaseAddress = new Uri(host) };
 
 var fakerPerson = new Faker<PersonCreateRequest>()

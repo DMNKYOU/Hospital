@@ -35,7 +35,7 @@ namespace PMI.Hospital.Controllers
         /// <summary>
         /// Gets a patient collection based on date.
         /// </summary>
-        // This could be part of the GET ALL ITEMS API, with an additional query parameter for search functionality.
+        // This can be part of the GET ALL ITEMS API, with an additional query parameter for search functionality.
         [HttpPost("searchByDate")] 
         [Produces("application/json")]
         [ProducesResponseType(typeof(ICollection<ChildrenPatientResponse>), StatusCodes.Status200OK)]
