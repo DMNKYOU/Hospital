@@ -13,5 +13,12 @@ namespace PMI.Hospital.Infrastructure.Persistence.People.Repository.Actions.Fetc
         /// <param name="id">The entity id.</param>
         /// <returns>The entity.</returns>
         Task<PersonDto> GetByIdAsync(string id);
+
+        /// <summary>
+        /// Indicates the entity by id.
+        /// </summary>
+        /// <param name="id">The entity id.</param>
+        /// <returns>The async operation result.</returns>
+        Task<bool> ExistsAsync(string id);
     }
 }

@@ -6,17 +6,17 @@ using PMI.Hospital.Infrastructure.Persistence.Models;
 using PMI.Hospital.Infrastructure.Persistence.Repository;
 using PMI.Hospital.Shared.Constants;
 
-namespace PMI.Hospital.Infrastructure.Persistence.People.Repository.Actions.Fetch
+namespace PMI.Hospital.Infrastructure.Persistence.ChildrenWardPatients.Repository.Actions.Fetch
 {
     /// <inheritdoc />
-    internal class PersonFetcher : BaseFetcher<PersonEntity, PersonDto>, IPersonFetcher
+    internal class ChildrenWardPatientFetcher : BaseFetcher<ChildrenWardPatientEntity, ChildrenWardPatientDto>, IChildrenWardPatientFetcher
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="PersonFetcher"/> class.
+        /// Initializes a new instance of the <see cref="ChildrenWardPatientFetcher"/> class.
         /// </summary>
         /// <param name="mapper">The mapper.</param>
         /// <param name="database">The database.</param>
-        public PersonFetcher(
+        public ChildrenWardPatientFetcher(
             IMapper mapper,
             ApplicationDbContext database)
             : base(database, mapper)
@@ -26,17 +26,7 @@ namespace PMI.Hospital.Infrastructure.Persistence.People.Repository.Actions.Fetc
         /// <inheritdoc />
         public async Task<bool> ExistsAsync(string id)
         {
-            return await database.People.CountAsync(x => x.Id == id) == HelperConstants.OneItem;
-        }
-
-        /// <inheritdoc />
-        public async Task<PersonDto> GetByIdAsync(string id)
-        {
-            var entity = await database.People
-                .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Id == id);
-
-            return mapper.Map<PersonDto>(entity);
+            return await database.ChildrenWardPatients.CountAsync(x => x.Id == id) == HelperConstants.OneItem;
         }
     }
 }

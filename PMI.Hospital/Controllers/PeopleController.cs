@@ -51,7 +51,7 @@ namespace PMI.Hospital.Controllers
         /// <returns>Created entity.</returns>
         [HttpPost]
         [Produces("application/json")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(PersonResponse), StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<PersonResponse> Create([FromBody] PersonCreateRequest request)

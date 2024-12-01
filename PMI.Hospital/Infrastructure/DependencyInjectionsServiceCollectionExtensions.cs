@@ -1,4 +1,5 @@
-﻿using PMI.Hospital.Business.People.Services;
+﻿using PMI.Hospital.Business.ChildrenWardPatients.Services;
+using PMI.Hospital.Business.People.Services;
 
 namespace PMI.Service.PersonalizationHub.Infrastructure.DependencyInjections
 {
@@ -16,7 +17,8 @@ namespace PMI.Service.PersonalizationHub.Infrastructure.DependencyInjections
             this IServiceCollection services)
         {
             services
-                 .AddScoped<IPersonService, PersonService>();
+                 .AddScoped<IPersonService, PersonService>()
+                 .AddScoped<IChildrenWardPatientService, ChildrenWardPatientService>();
         }
     }
 }

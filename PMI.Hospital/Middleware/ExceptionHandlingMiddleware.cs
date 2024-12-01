@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using PMI.Hospital.Shared.Exceptions;
+using System;
 
 namespace PMI.Hospital.Middleware
 {
@@ -32,6 +33,14 @@ namespace PMI.Hospital.Middleware
             if (exception is EntityNotFoundException)
             {
                 context.Response.StatusCode = StatusCodes.Status404NotFound;
+                var response = new { message = exception.Message };
+
+                return context.Response.WriteAsJsonAsync(response);
+            }
+
+            if (exception is InvalidOperationException)
+            {
+                context.Response.StatusCode = StatusCodes.Status400BadRequest;
                 var response = new { message = exception.Message };
 
                 return context.Response.WriteAsJsonAsync(response);

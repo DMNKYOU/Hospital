@@ -6,18 +6,18 @@ using PMI.Hospital.Infrastructure.Persistence.DatabaseContext;
 using PMI.Hospital.Infrastructure.Persistence.Models;
 using PMI.Hospital.Shared.Exceptions;
 
-namespace PMI.Hospital.Infrastructure.Persistence.People.Repository.Actions.Remove
+namespace PMI.Hospital.Infrastructure.Persistence.ChildrenWardPatients.Repository.Actions.Remove
 {
     /// <inheritdoc />
-    internal class PersonRemover : IPersonRemover
+    internal class ChildrenWardPatientRemover : IChildrenWardPatientRemover
     {
         private readonly ApplicationDbContext database;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PersonRemover"/> class.
+        /// Initializes a new instance of the <see cref="ChildrenWardPatientRemover"/> class.
         /// </summary>
         /// <param name="database">The database.</param>
-        public PersonRemover(ApplicationDbContext database)
+        public ChildrenWardPatientRemover(ApplicationDbContext database)
         {
             this.database = database;
         }
@@ -25,12 +25,12 @@ namespace PMI.Hospital.Infrastructure.Persistence.People.Repository.Actions.Remo
         /// <inheritdoc />
         public async Task RemoveAsync(string id)
         {
-            var entityToDelete = await this.database.People
+            var entityToDelete = await this.database.ChildrenWardPatients
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             if (entityToDelete is null)
             {
-                throw new EntityNotFoundException(nameof(PersonEntity));
+                throw new EntityNotFoundException(nameof(ChildrenWardPatientEntity));
             }
 
             this.database.Remove(entityToDelete);

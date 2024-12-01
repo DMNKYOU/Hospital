@@ -21,6 +21,9 @@ var mappingConfig = new MapperConfiguration(mc =>
     mc.AddProfile(new PeopleModelProfile());
     mc.AddProfile(new PeopleDtoProfile());
     mc.AddProfile(new PeopleProfile());
+
+    mc.AddProfile(new ChildrenWardPatientModelProfile());
+    mc.AddProfile(new ChildrenWardPatientProfile());
 });
 
 IMapper mapper = mappingConfig.CreateMapper();

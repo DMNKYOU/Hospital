@@ -7,10 +7,8 @@ using PMI.Hospital.Shared.Helpers;
 
 namespace PMI.Hospital.Business.People.Services
 {
-    /// <summary>
-    /// Provides interface for people.
-    /// </summary>
-     public class PersonService : IPersonService
+    /// <inheritdoc />
+    public class PersonService : IPersonService
     {
         private readonly IMapper mapper;
         private ILogger<PersonService> logger;

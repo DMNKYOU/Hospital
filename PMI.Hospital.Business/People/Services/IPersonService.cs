@@ -3,7 +3,7 @@
 namespace PMI.Hospital.Business.People.Services
 {
     /// <summary>
-    /// Provides interface for work with people.
+    /// Provides interface for people.
     /// </summary>
     public interface IPersonService
     {
