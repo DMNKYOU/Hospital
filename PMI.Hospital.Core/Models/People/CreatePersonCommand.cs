@@ -7,5 +7,9 @@ namespace PMI.Hospital.Core.Models.People
     /// </summary>
     public class CreatePersonCommand : PersonBase
     {
+        /// <summary>
+        /// Gets or sets id.
+        /// </summary>
+        public string Id { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace PMI.Hospital.Infrastructure.Mapper
         public PeopleModelProfile()
         {
             CreateMap<PersonCreateRequest, CreatePersonCommand>()
+                .ForMember(p => p.Id, o => o.MapFrom(x => x.Id))
                 .ForMember(p => p.Family, o => o.MapFrom(x => x.Family))
                 .ForMember(p => p.FirstName, o => o.MapFrom(x => x.FirstName))
                 .ForMember(p => p.MiddleName, o => o.MapFrom(x => x.MiddleName))
