@@ -23,6 +23,14 @@ namespace PMI.Hospital.Infrastructure.Persistence.People.Mapper
                 .ForMember(p => p.Gender, o => o.MapFrom(x => x.Gender))
                 .ForMember(p => p.BirthDate, o => o.MapFrom(x => x.BirthDate))
                 .ReverseMap();
+
+            CreateMap<PersonEntity, PersonExtendedDto>()
+               .IncludeBase <PersonEntity, PersonDto>()
+               .ForMember(p => p.PatientActiveState, o =>
+                {
+                    o.PreCondition(x => x.ChildrenWardPatient != null);
+                    o.MapFrom(x => x.ChildrenWardPatient.Active);
+                });
         }
     }
 }
