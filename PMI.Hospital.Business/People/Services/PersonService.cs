@@ -46,7 +46,7 @@ namespace PMI.Hospital.Business.People.Services
         public async Task<PersonDto> Create(CreatePersonCommand command)
         {
             var entity =this.mapper.Map<PersonDto>(command);
-            entity.Id = EntityHelper.GetNewSystemName();
+            entity.Id ??= EntityHelper.GetNewSystemName();
             await personEntityRepository.Creator.CreateAsync(entity);
 
             return entity;
