@@ -16,7 +16,7 @@
         /// <returns>System name.</returns>
         public static string GetNewSystemName()
         {
-            return Guid.NewGuid().ToString("D").Replace('-', '_');
+            return Guid.NewGuid().ToString("D");
         }
     }
 }

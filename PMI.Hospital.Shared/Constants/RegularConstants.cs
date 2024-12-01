@@ -15,6 +15,6 @@ namespace PMI.Hospital.Shared.Constants
         /// <summary>
         /// The date search expression.
         /// </summary>
-        public const string SearchByDateExpression = @"^[A-Za-zА-Яа-я]{2}\d{4}(-\d{2}){0,2}(T\d{2}:\d{2}(:\d{2})?)?$";
+        public const string SearchByDateExpression = @"(eq|ne|gt|lt|ge|le|sa|eb|ap)\d{4}(-\d{2}){0,2}(T\d{2}:\d{2}(:\d{2}(\.\d{1,3})?)?)?$";
     }
 }

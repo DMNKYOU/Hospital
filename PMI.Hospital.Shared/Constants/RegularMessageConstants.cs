@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace PMI.Hospital.Shared.Constants
 {
@@ -8,8 +10,13 @@ namespace PMI.Hospital.Shared.Constants
     public static class RegularMessageConstants
     {
         /// <summary>
-        /// The base collection path.
+        /// The only letters message.
         /// </summary>
-        public const string OnlyLettersError = "personalizationHub";
+        public const string OnlyLettersError = "The value should contain only letters";
+
+        /// <summary>
+        /// The only letters message.
+        /// </summary>
+        public const string SearchDateError = "The date should follow format type + date like ap2013-03-14";
     }
 }

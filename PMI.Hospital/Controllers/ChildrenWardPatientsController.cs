@@ -33,6 +33,22 @@ namespace PMI.Hospital.Controllers
         }
 
         /// <summary>
+        /// Gets a patient collection based on date.
+        /// </summary>
+        // This can be part of the GET ALL ITEMS API, with an additional query parameter for search functionality.
+        [HttpPost("searchByDate")] 
+        [Produces("application/json")]
+        [ProducesResponseType(typeof(ICollection<ChildrenPatientResponse>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ICollection<ChildrenPatientResponse>> SearchByDate([FromBody] PatientSearchRequest request)
+        {
+            var result = await childrenWardPatientService.ListEntitiesByDate(request.SearchTerm);
+
+            return this.mapper.Map<ICollection<ChildrenPatientResponse>>(result);
+        }
+
+        /// <summary>
         /// Gets a patient.
         /// </summary>
         [HttpGet("{id}")]

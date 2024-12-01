@@ -3,6 +3,7 @@ using PMI.Hospital.Infrastructure.Converters;
 using PMI.Hospital.Shared.Constants;
 using PMI.Hospital.Core.Enums;
 using System.ComponentModel.DataAnnotations;
+using PMI.Hospital.Shared.Helpers;
 
 namespace PMI.Hospital.Contracts.People
 {
@@ -14,8 +15,8 @@ namespace PMI.Hospital.Contracts.People
         /// <summary>
         /// Gets or sets id.
         /// </summary>
-        [JsonProperty("id", Required = Required.AllowNull)]
-        public string Id { get; set; }
+        [JsonProperty("id")]
+        public string Id { get; set; } = EntityHelper.GetNewSystemName();
 
         /// <summary>
         /// Gets or sets family.

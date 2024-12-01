@@ -2,14 +2,18 @@
 using Microsoft.Extensions.Logging;
 using PMI.Hospital.Core.Models.People;
 using PMI.Hospital.Infrastructure.Persistence.People.Repository;
+using PMI.Hospital.Shared.Constants;
 using PMI.Hospital.Shared.Exceptions;
 using PMI.Hospital.Shared.Helpers;
+using System.ComponentModel.Design;
 
 namespace PMI.Hospital.Business.People.Services
 {
     /// <inheritdoc />
     public class PersonService : IPersonService
     {
+       
+
         private readonly IMapper mapper;
         private ILogger<PersonService> logger;
         private IPersonRepository personEntityRepository;
@@ -42,9 +46,17 @@ namespace PMI.Hospital.Business.People.Services
 
             return entity;
         }
+        
         /// <inheritdoc />
         public async Task<PersonDto> Create(CreatePersonCommand command)
         {
+            var exists = await personEntityRepository.Fetcher.ExistsAsync(command.Id);
+            
+            if (exists)
+            {
+                throw new InvalidDataException(HelperConstants.ExistsError);
+            }
+
             var entity =this.mapper.Map<PersonDto>(command);
             entity.Id ??= EntityHelper.GetNewSystemName();
             await personEntityRepository.Creator.CreateAsync(entity);
@@ -53,9 +65,9 @@ namespace PMI.Hospital.Business.People.Services
         }
 
         /// <inheritdoc />
-        public async Task Remove(string id)
+        public Task Remove(string id)
         {
-            await personEntityRepository.Remover.RemoveAsync(id);
+            return personEntityRepository.Remover.RemoveAsync(id);
         }
     }
 }

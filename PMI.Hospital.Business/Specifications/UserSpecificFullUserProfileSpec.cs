@@ -1,7 +1,7 @@
 ﻿using Ardalis.Specification;
 using PMI.Hospital.Infrastructure.Persistence.Models;
 
-namespace PMI.Hospital.Business.ChildrenWardPatients.Services
+namespace PMI.Hospital.Business.Specifications
 {
     /// <summary>
     /// The patient profile specification.
@@ -15,13 +15,13 @@ namespace PMI.Hospital.Business.ChildrenWardPatients.Services
         /// <param name="asNoTracking">The flag to indicate whether query is need to be tracked or not.</param>
         public FullChildWardPatientSpec(string id, bool asNoTracking)
         {
-            this.Query
+            Query
                 .Include(x => x.Person)
                 .Where(x => x.Id == id);
 
             if (asNoTracking)
             {
-                this.Query.AsNoTracking();
+                Query.AsNoTracking();
             }
         }
     }

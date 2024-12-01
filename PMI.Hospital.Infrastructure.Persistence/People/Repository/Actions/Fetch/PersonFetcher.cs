@@ -9,7 +9,7 @@ using PMI.Hospital.Shared.Constants;
 namespace PMI.Hospital.Infrastructure.Persistence.People.Repository.Actions.Fetch
 {
     /// <inheritdoc />
-    internal class PersonFetcher : BaseFetcher<PersonEntity, PersonDto>, IPersonFetcher
+    internal class PersonFetcher : BaseFetcher<PersonEntity, PersonExtendedDto>, IPersonFetcher
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PersonFetcher"/> class.

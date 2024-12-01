@@ -34,5 +34,12 @@ namespace PMI.Hospital.Business.ChildrenWardPatients.Services
         /// <param name="id">The id.</param>
         /// <returns>result of async operation.</returns>
         Task Remove(string id);
+
+        /// <summary>
+        /// List entities by date term.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns>result of async operation.</returns>
+        Task<List<ChildrenWardPatientDto>> ListEntitiesByDate(string searchTerm);
     }
 }
